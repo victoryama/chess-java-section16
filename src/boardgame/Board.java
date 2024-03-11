@@ -21,7 +21,7 @@ public class Board {
 
 	public void setRows(int rows) {
 		this.rows = rows;
-	}
+	} 
 
 
 	public int getColumns() {
@@ -32,6 +32,16 @@ public class Board {
 	public void setColumns(int columns) {
 		this.columns = columns;
 	}
+	
+	public Piece piece(int row, int column) {
+		return pieces[row][column];
+	}
+	
+	public Piece piece(Position position) {
+		return pieces[position.getRow()][position.getColumn()];
+	}
+	
+	
 	
 	
 	//não precisa de getters setter da piece, pois tem metodos que realizam isso
