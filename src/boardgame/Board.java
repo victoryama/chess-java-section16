@@ -41,7 +41,10 @@ public class Board {
 		return pieces[position.getRow()][position.getColumn()];
 	}
 	
-	
+	public void placePiece(Piece piece, Position position) {
+		pieces[position.getRow()][position.getColumn()] = piece; //pega a matriz na posição dada e atribui a ela peça informada
+		piece.position = position;
+	}
 	
 	
 	//não precisa de getters setter da piece, pois tem metodos que realizam isso
