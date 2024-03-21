@@ -44,9 +44,11 @@ public class ChessMatch {
 	
 	private void validateSourcePosition(Position position) {
 		//if (!board.thereIsAPiece(position){ por algum motivo não funciona
-		if (board.thereIsAPiece(position) == false) {
+		if (board.thereIsAPiece(position) == false) { 
 			throw new BoardException("There is no piece on source position");
 		}
+		if (!board.piece(position).isThereAnyPossibleMove())
+			throw new ChessException("There is no possible moves for the chosen piece");
 	}
 	
 	private void placeNewPiece(char column, int row, ChessPiece piece) {
